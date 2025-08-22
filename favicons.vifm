@@ -1,72 +1,353 @@
-" Ranger devicons for ViFM
-" https://github.com/cirala/vifm_devicons
-"
-" Filetypes/directories
-set classify=' :dir:/, :exe:, :reg:, :link:,? :?:, ::../::'
+" Generals
+set classify+='󰉋 :dir:/,󰞷 :exe:, :reg:, :link:, :?:, ::../::'
+
+" Specific directories
+execute "set classify+='󱂵 :://^" . $HOME . "/$//::/'"
+
+set classify+='󱧴 :://^/root/$//::/,
+\󱁿 :://^/etc/$//::/,
+\󰾰 :://^/dev/$//::/,
+\ :://^/mnt/$//::/,
+\ :://^/run/media/$//::/,
+\ :://^/run/mount/$//::/,
+\󰴉 :://^/opt/$//::/,
+\󱂵 :://^/home/$//::/,
+\󱋣 ::lib/,,lib32/,,lib64/::/,
+\󰉗 ::bin/,,sbin/::/,
+\󰪻 ::tmp/::/,
+\󱞊 ::lost+found/::/,
+\󰇄 ::desktop/::/,
+\󱧶 ::documents/,,document/::/,
+\󰉍 ::downloads/,,download/::/,
+\󰉏 ::pictures/,,picture/,,images/::/,
+\󱧺 ::videos/,,video/::/,
+\󱍙 ::musics/,,music/,,sounds/::/,
+\󰴉 ::programs/,,program/,,application/,,applications/::/,
+\󰉌 ::personal/::/,
+\󱥾 ::public/,,work/::/,
+\󰚝 ::favorite/,,favorites/::/,
+\ ::repository/,,repositories/::/,
+\ ::clones/::/,
+\󰴋 ::sync/::/,
+\ ::mount/::/,
+\󱊞 ::usb/::/,
+\ ::trash/::/,
+\ ::coredump/,,minidump/,,crashdumps/,,reportarchive/,,reportqueue/,,diagnosticreports/::/,
+\󱨑 ::firewall/,,firewalld/,,iptables/,,nftables/,,netfilter/,,pf.anchors/::/,
+\󰣖 ::firmware/::/,
+\󱔗 ::man[0-9]/::/,
+\󱂷 ::.local/,,.cache/,,cache/,,appdata/::/,
+\󱁿 ::.config/::/,
+\󰄤 ::.cert/,,ca-certificates/,,certs/::/,
+\󰢬 ::.gnupg/,,.ssh/,,.pki/::/,
+\ ::.git/::/,
+\ ::.github/,,github/::/,
+\ ::.gitlab/,,gitlab/,,.gitlab-ci/::/,
+\ ::.forgejo/::/,
+\󱁢 ::.terraform/,,terraform/::/,
+\󱂚 ::.ansible/,,ansible/::/,
+\ ::.vim/,,vim/::/,
+\ ::.nvim/,,nvim/::/,
+\ ::.emacs/,,emacs/,,.emacs.d/::/,
+\ ::.conda/,,conda/,,anaconda3/,,miniconda3/::/,
+\ ::.yarn/,,.yarncache/,,.yarn-config/::/,
+\ ::.docker/,,docker/::/,
+\󱃾 ::.kubernetes/,,kubernetes/::/,
+\ ::.idea/::/,
+\ ::.vscode/,,.vscode-oss/::/,
+\󰍖 ::.wine/,,wine/::/,
+\󰓓 ::.steam/,,steam/::/,
+\ ::.aws/,,aws/::/,
+\ ::.azure/,,azure/::/,
+\󱇶 ::.gcloud/,,gcloud/::/,
+\󰇣 ::.dropbox/,,dropbox/::/,
+\󰊶 ::google dirve/,,google-drive/::/,
+\ ::node_modules/::/,
+\󱧮 ::build/,,taregt/,,dist/::/,
+\󰣇 ::pacman/,,pacman.d/::/,
+\ ::apt/,,apt.conf.d/,,dpkg/::/,
+\󰣛 ::dnf/,,yum.repos.d/::/,
+\󰣨 ::.portage/,,portage/::/,
+\󰏖 ::.flatpak/,,flatpak/,,.snap/,,snap/::/,
+\ ::linux/::/,
+\󰣇 ::archlinux/,,arch-linux/::/,
+\󱘊 ::manjaro/::/,
+\ ::debian/::/,
+\󰕈 ::ubuntu/::/,
+\󰣭 ::mintlinux/,,mint-linux/::/,
+\󰣛 ::fedora/::/,
+\󱄛 ::rhel/,,redhat/::/,
+\ ::rockylinux/,,rocky-linux/::/,
+\󰣨 ::gentoo/::/,
+\ ::opensuse/::/,
+\ ::alpinelinux/,,alpine-linux/::/,
+\󱄅 ::nixos/::/,
+\󰣠 ::freebsd/::/,
+\󰀲 ::android/::/,
+\ ::windows/::/,
+\ ::osx/,,macos/::/,
+\󰊭 ::google/::/,
+\󰍲 ::microsoft/::/,
+\ ::apple/::/,
+\󰈹 ::firefox/,,mercury/::/,
+\ ::chromium/,,google-chrome*/,,thorium/::/,
+\󰇩 ::microsoft-edge*/::/,
+\ ::jetbrains/::/,
+\ ::tmux/::/,
+\󰕼 ::vlc/::/,
+\ ::spotify/::/,
+\ ::telegramdesktop/,,telegram desktop/::/,
+\󰙯 ::discord/::/,
+\󰖣 ::whatsapp/::/,
+\ ::slack/::/'
+
+" Directories
+set classify+='󱧼 ::*.d/::/'
 
 " Specific files
-set classify+=' ::.Xdefaults,,.Xresources,,.bashprofile,,.bash_profile,,.bashrc,,.dmrc,,.d_store,,.fasd,,.gitconfig,,.gitignore,,.jack-settings,,.mime.types,,.nvidia-settings-rc,,.pam_environment,,.profile,,.recently-used,,.selected_editor,,.xinitpurc,,.zprofile,,.yarnc,,.snclirc,,.tmux.conf,,.urlview,,.config,,.ini,,.user-dirs.dirs,,.mimeapps.list,,.offlineimaprc,,.msmtprc,,.Xauthority,,config::'
-set classify+=' ::dropbox::'
-set classify+=' ::favicon.*,,README,,readme::'
-set classify+=' ::.vim,,.vimrc,,.gvimrc,,.vifm::'
-set classify+=' ::gruntfile.coffee,,gruntfile.js,,gruntfile.ls::'
-set classify+=' ::gulpfile.coffee,,gulpfile.js,,gulpfile.ls::'
-set classify+=' ::ledger::'
-set classify+=' ::license,,copyright,,copying,,LICENSE,,COPYRIGHT,,COPYING::'
-set classify+=' ::node_modules::'
-set classify+=' ::react.jsx::'
+set classify+=' ::.profile,,.bashprofile,,bashprofile,,.bash_profile,,bash_profile,,.bash_login,,bash_login,,.bash_logout,,bash_logout,,.bash_aliases,,bash_aliases,,.bashrc,,bashrc,,.inputrc,,inputrc,,.zshrc,,zshrc,,.zshenv,,zshenv,,.zprofile,,zprofile::,
+\ ::.dmrc,,.jack-settings,,.mime.types,,mime.types,,.nvidia-settings-rc,,.pam_environment,,.selected_editor,,.mimeapps.list,,.xinitrc,,.xinitpurc,,.Xauthority,,.Xdefaults,,.Xresources,,.config,,config,,.user-dirs.dirs,,user-dirs.dirs,,.user-dirs.locale,,user-dirs.locale,,.ds_store,,ds_store::,
+\ ::fzfrc,,ripgreprc,,nanorc,,wgetrc,,.muttrc,,muttrc,,.neomuttrc,,neomuttrc,,.stowrc,,stowrc,,.stow-local-ignore,,stow-local-ignore,,.nvmrc,,nvmrc,,lfrc,,htoprc,,zathurarc,,vlcrc,,.offlineimaprc,,.msmtprc::,
+\󱨑 ::iptables.rules,,rules.v4,,rules.v6,,nftables.conf,,pf.conf,,ipfw.rules,,ipf.conf,,ipnat.conf,,ippool.conf,,npf.conf,,com.apple.alf.plist::,
+\ ::.editorconfig,,editorconfig::,
+\ ::.vim,,.viminfo,,.vimrc,,vimrc,,.gvimrc,,.vifm,,vifmrc::,
+\ ::.tmux.conf,,tmux.conf::,
+\ ::readme,,readme.*::,
+\󱝀 ::license,,license.*::,
+\󰗦 ::copyright,,copying::,
+\ ::code_of_conduct,,code_of_conduct.*::,
+\󰝖 ::todo,,todo.*::,
+\󰺻 ::.mailmap::,
+\󰊢 ::.gitignore,,.gitconfig,,.gitmodules,,.gitattributes::,
+\󱅇 ::.*ignore::,
+\󰫧 ::.env::,
+\ ::.gitlab-ci.yml,,.gitlab-ci.yaml::,
+\ ::dockerfile,,docker-compose.yml::,
+\ ::helmfile.yaml,,helmfile.yml::,
+\󰯙 ::meson.build,,meson.options,,meson_options.txt::,
+\󱃾 ::kubeconfig.*::,
+\󱌣 ::makefile,,makefile.*,,justfile::,
+\ ::jenkinsfile::,
+\ ::vagrantfile::,
+\ ::procfile::,
+\ ::.codecov.yml,,codecov.yml,,.codecov.yaml,,codecov.yaml::,
+\ ::.travis.yml,,travis.yml,,.travis.yaml,,travis.yaml::,
+\󱘗 ::.cargo.lock,,cargo.lock,,.cargo.toml,,cargo.toml::,
+\󱄅 ::.flake.lock,,flake.lock::,
+\󰴭 ::.gemfile,,gemfile,,.gemfile.lock,,gemfile.lock::,
+\ ::.npmrc,,npmrc,,package.json,,package-lock.json::,
+\ ::.yarnrc,,yarnrc,,yarn.lock::,
+\ ::.condarc,,condarc::,
+\ ::gulpfile.js,,gulpfile.coffee,,gulpfile.ls::,
+\ ::gruntfile.js,,gruntfile.coffee,,gruntfile.ls::,
+\ ::swagger.json,,swagger.yml,,swagger.yaml::,
+\ ::openapi.json,,openapi.yml,,openapi.yaml::,
+\󰮆 ::log,,log.old,,.xsession-errors,,.xsession-errors.old::,
+\󰌾 ::.password-store,,password-store::,
+\󱆅 ::known_hosts::,
+\󰣇 ::pacman.conf,,pkgbuild::,
+\ ::apt.conf::,
+\󰣛 ::dnf.conf::,
+\ ::ledger::,
+\󰇣 ::dropbox::'
 
 " File extensions
-set classify+='λ ::*.ml,,*.mli::'
-set classify+=' ::*.styl::'
-set classify+=' ::*.scss::'
-set classify+=' ::*.py,,*.pyc,,*.pyd,,*.pyo::'
-set classify+=' ::*.php::'
-set classify+=' ::*.markdown,,*.md::'
-set classify+=' ::*.json::'
-set classify+=' ::*.js::'
-set classify+=' ::*.bmp,,*.gif,,*.ico,,*.jpeg,,*.jpg,,*.png,,*.svg,,*.svgz,,*.tga,,*.tiff,,*.xmb,,*.xcf,,*.xpm,,*.xspf,,*.xwd,,*.cr2,,*.dng,,*.3fr,,*.ari,,*.arw,,*.bay,,*.crw,,*.cr3,,*.cap,,*.data,,*.dcs,,*.dcr,,*.drf,,*.eip,,*.erf,,*.fff,,*.gpr,,*.iiq,,*.k25,,*.kdc,,*.mdc,,*.mef,,*.mos,,*.mrw,,*.obm,,*.orf,,*.pef,,*.ptx,,*.pxn,,*.r3d,,*.raf,,*.raw,,*.rwl,,*.rw2,,*.rwz,,*.sr2,,*.srf,,*.srw,,*.tif,,*.x3f,,*.webp,,*.avif,,*.jxl::'
-set classify+=' ::*.ejs,,*.htm,,*.html,,*.slim,,*.xml,,*.cshtml::'
-set classify+=' ::*.mustasche::'
-set classify+=' ::*.css,,*.less,,*.conf,,*.ini,,*.rc,,*.yml,,*.cfg::'
-set classify+=' ::*.rss::'
-set classify+=' ::*.coffee::'
-set classify+=' ::*.twig::'
-set classify+=' ::*.c++,,*.cpp,,*.cxx,,*.h::'
-set classify+=' ::*.cc,,*.c::'
-set classify+=' ::*.cs::'
-set classify+=' ::*.hs,,*.lhs::'
-set classify+=' ::*.lua::'
-set classify+=' ::*.jl::'
-set classify+=' ::*.go::'
-set classify+=' ::*.ts::'
-set classify+=' ::*.db,,*.dump,,*.sql::'
-set classify+=' ::*.sln,,*.suo::'
-set classify+=' ::*.exe::'
-set classify+=' ::*.diff,,*.sum,,*.md5,,*.sha512::'
-set classify+=' ::*.scala::'
-set classify+=' ::*.java,,*.jar::'
-set classify+=' ::*.xul::'
-set classify+=' ::*.clj,,*.cljc::'
-set classify+=' ::*.pl,,*.pm,,*.t::'
-set classify+=' ::*.cljs,,*.edn::'
-set classify+=' ::*.rb::'
-set classify+=' ::*.fish,,*.sh,,*.bash,,*.ps1,,*.psd1,,*.psm1,,*.cmd,,*.bat::'
-set classify+=' ::*.dart::'
-set classify+=' ::*.f#,,*.fs,,*.fsi,,*.fsscript,,*.fsx::'
-set classify+=' ::*.rlib,,*.rs::'
-set classify+=' ::*.d::'
-set classify+=' ::*.erl,,*.hrl::'
-set classify+=' ::*.ai::'
-set classify+=' ::*.psb,,*.psd::'
-set classify+=' ::*.jsx::'
-set classify+=' ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.mid,,*.midi,,*.mp3,,*.mpc,,*.oga,,*.ogg,,*.ogx,,*.ra,,*.ram,,*.rm,,*.spx,,*.wav,,*.wma,,*.ac3::'
-set classify+=' ::*.avi,,*.flv,,*.mkv,,*.mov,,*.mp4,,*.mpeg,,*.mpg,,*.webm,,*.av1::'
-set classify+=' ::*.epub,,*.pdf,,*.fb2,,*.djvu::'
-set classify+=' ::*.7z,,*.apk,,*.bz2,,*.cab,,*.cpio,,*.deb,,*.gem,,*.gz,,*.gzip,,*.lh,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.tar,,*.tgz,,*.xz,,*.zip,,*.zst::'
-set classify+=' ::*.cbr,,*.cbz::'
-set classify+=' ::*.log::'
-set classify+=' ::*.doc,,*.dot,,*.docx,,*.docm,,*.dotx,,*.dotm,,*.adoc::'
-set classify+=' ::*.xls,,*.xlt,,*.xla,,*.xlsx,,*.xlsm,,*.xltx,,*.xltm,,*.xlam::'
-set classify+=' ::*.ppt,,*.pot,,*.ppa,,*.pptx,,*.pptm,,*.potx,,*.potm,,*.ppam::'
+set classify+=' ::*.abf,,*.afm,,*.bdf,,*.eot,,*.fnt,,*.fon,,*.otf,,*.pcf,,*.pfa,,*.pfb,,*.pfm,,*.psf,,*.tfm,,*.ttc,,*.ttf,,*.type1,,*.woff,,*.woff2::,
+\ ::*.3fr,,*.apng,,*.ari,,*.arw,,*.avif,,*.bay,,*.bmp,,*.cap,,*.cr2,,*.cr3,,*.crw,,*.dcm,,*.dcr,,*.dcs,,*.dicom,,*.dng,,*.drf,,*.eip,,*.eps,,*.erf,,*.exr,,*.fff,,*.gif,,*.gpr,,*.hdr,,*.heic,,*.heif,,*.hif,,*.ico,,*.icns,,*.iiq,,*.j2k,,*.jfif,,*.jif,,*.jp2,,*.jpe,,*.jpeg,,*.jpg,,*.jpx,,*.jxl,,*.k25,,*.kdc,,*.mdc,,*.mef,,*.mos,,*.mrw,,*.nef,,*.obm,,*.orf,,*.pbm,,*.pef,,*.pgm,,*.pic,,*.pjpg,,*.png,,*.pnm,,*.ppm,,*.ptx,,*.pxn,,*.qoi,,*.r3d,,*.raf,,*.raw,,*.rgb,,*.rw2,,*.rwl,,*.rwz,,*.sr2,,*.srf,,*.srw,,*.svg,,*.svgz,,*.tga,,*.tif,,*.tiff,,*.webp,,*.x3f,,*.xbm,,*.xcf,,*.xpm,,*.xwd::,
+\ ::*.3g2,,*.3gp,,*.amv,,*.asf,,*.av1,,*.avchd,,*.avi,,*.divx,,*.f4a,,*.f4b,,*.f4p,,*.f4v,,*.fli,,*.flv,,*.gifv,,*.h26[0-9],,*.m2ts,,*.m1v,,*.m2v,,*.m4v,,*.m4u,,*.mjpg,,*.mjpeg,,*.mkv,,*.mng,,*.mov,,*.movie,,*.mp4,,*.mp4v,,*.mpe,,*.mpeg,,*.mpeg[0-9],,*.mpg,,*.mpg[0-9],,*.mpv,,*.mts,,*.mxf,,*.nsv,,*.ogv,,*.qt,,*.rm,,*.rmvb,,*.roq,,*.rrc,,*.svi,,*.vid,,*.vob,,*.webm,,*.wmv,,*.yuv::,
+\󰸪 ::*.aac,,*.aax,,*.ac3,,*.aif,,*.aifc,,*.aiff,,*.alac,,*.amr,,*.anx,,*.ape,,*.asf,,*.au,,*.aup,,*.awb,,*.axa,,*.dss,,*.dts,,*.flac,,*.iklax,,*.m2a,,*.m4a,,*.m4b,,*.m4p,,*.mid,,*.midi,,*.mka,,*.mogg,,*.mp3,,*.mpa,,*.mpc,,*.oga,,*.ogg,,*.ogx,,*.opus,,*.ra,,*.ram,,*.rm,,*.snd,,*.spx,,*.tta,,*.vox,,*.wav,,*.weba,,*.wma,,*.wv::,
+\ ::*.7z,,*.ace,,*.alz,,*.ar,,*.arc,,*.arj,,*.boz,,*.br,,*.bz,,*.bz2,,*.cab,,*.cpio,,*.gem,,*.gz,,*.gzi,,*.gzip,,*.lbr,,*.lh,,*.lha,,*.lz,,*.lz4,,*.lzh,,*.lzma,,*.lzo,,*.lzop,,*.lzx,,*.pak,,*.pax,,*.pea,,*.r[0-9][0-9],,*.rar,,*.rz,,*.sfx,,*.tar,,*.tbz,,*.tbz2,,*.tgz,,*.tlz,,*.txz,,*.tzst,,*.xar,,*.xbps,,*.xz,,*.z,,*.zip,,*.zipx,,*.zoo,,*.zpaq,,*.zst::,
+\󰏔 ::*.pkg.tar.zst,,*.deb,,*.udeb,,*.rpm,,*.eopkg,,*.pisi,,*.pet,,*.flatpak,,*.snap,,*.appimage,,*.appimage.zs-old,,*.bundle,,*.framework::,
+\ ::*.udf,,*.iso,,*.cso,,*.img,,*.hfs,,*.omg,,*.ova,,*.ovf,,*.qcow,,*.qcow[0-9],,*.qed,,*.vdi,,*.vfd,,*.vhd,,*.vhdx,,*.vud,,*.vmdk,,*.dsk,,*.ima,,*.hdd,,*.wim,,*.swm,,*.esd,,*.rom,,*.sdi::,
+\󰨖 ::*.ass,,*.srt,,*.ssa,,*.vtt::,
+\ ::*.docx,,*.doc,,*.docm,,*.dotx,,*.dotm,,*.wiz,,*.odt,,*.ott,,*.oth,,*.otm,,*.fodt,,*.pages,,*.wpd,,*.wps,,*.wpt::,
+\ ::*.xlsx,,*.xlm,,*.xls,,*.xlsm,,*.xlsmx,,*.xlsb,,*.xltx,,*.xlt,,*.xltm,,*.xla,,*.xll,,*.xlam,,*.dif,,*.csv,,*.tsv,,*.psv,,*.odc,,*.otc,,*.ods,,*.ots,,*.fods,,*.et,,*.ett::,
+\ ::*.pptx,,*.ppt,,*.pptm,,*.pot,,*.potx,,*.potm,,*.pps,,*.ppsx,,*.ppsm,,*.ppa,,*.ppam,,*.sldx,,*.sldm,,*.odp,,*.otp,,*.fodp,,*.dps,,*.dpt::,
+\ ::*.odf,,*.odft::,
+\ ::*.pdf,,*.djv,,*.djvu,,*.xps::,
+\󱉟 ::*.epub,,*.mobi,,*.fb2*,,*.azw,,*.azw[0-9],,*.htmlz,,*.cbr,,*.cbz::'
 
+set classify+='󰒓 ::.*.conf,,*.conf,,.*.config,,*.config,,.*.cfg,,*.cfg,,.*.cnf,,*.cnf,,.*.ini,,*.ini,,.*.inf,,*.inf,,.*.opts,,*.opts,,.*.prm,,*.prm,,.*.properties,,*.properties::,
+\ ::*.dhall,,*.hcl,,*.nomad::,
+\󰫧 ::.*.env,,*.env,,.*.env.*,,*.env.*,,.env.*,,*.environment,,*.reg::,
+\ ::*.txt,,*.text,,*.asc,,*.ascii,,*.ans,,*.utf8,,*.rtf,,*.rtx::,
+\ ::*.md,,*.mdown,,*.markdown,,*.mdx,,*.rmd,,*.qmd::,
+\ ::*.me::,
+\󰴓 ::*.adoc,,*.asciidoc,,*.etx,,*.textile,,*.rdoc,,*.ronn,,*.rst,,*.fountain::,
+\ ::*.org::,
+\ ::*.norg::,
+\ ::*.tex,,*.latex,,*.ltx,,*.bib,,*.bibtex,,*.biblatex,,*.sty::,
+\ ::*.vim,,*.vifm::,
+\ ::*.el,,*.elc::,
+\󰴠 ::*.torrent,,*.m3u,,*.m3u8,,*.pls,,*.xspf::,
+\ ::*.rss,,*.atom::,
+\󰩧 ::*.license,,*.lic::,
+\󰄤 ::*.cer,,*.crt,,*.crl,,*.csr,,*.der,,*.p12,,*.p7b,,*.p7c,,*.pem,,*.pfx::,
+\󱆅 ::*.gpg,,*.pgp,,*.ppk,,*.pub,,*.key,,*.sec,,*.jks::,
+\󰷼 ::*.sig::,
+\󱅞 ::*.bpw,,*.kdb,,*.kdbx,,*.1pux::,
+\󱨧 ::*.sum,,*.b64,,*.base64,,*.md5,,*.sha1,,*.sha256,,*.sha512::,
+\󱀰 ::*.enc,,*.age::,
+\󱀰 ::/\.crypt[0-9]*$/::,
+\󱊧 ::*.hex::,
+\󱀱 ::*.out::,
+\󰐱 ::*.mod::,
+\󱧉 ::*.lock::,
+\󰾵 ::*.swp::,
+\󰉹 ::*.list,,*.lst::,
+\󰆊 ::*.diff,,*.patch::,
+\ ::*.idx::,
+\󰮆 ::*.log,,*.err,,*.dmp,,*.dump,,*.journal,,*.blg,,*.etl,,*.evt,,*.evtx,,*.wer,,*.history,,.*_history,,*_history::,
+\ ::*.bak,,*.bkp,,*.old,,*.orig::,
+\󱋢 ::*.temp,,*.tmp::,
+\󰦗 ::*.part,,*.partial,,*.crdownload,,*.download::,
+\󰋗 ::*.help,,*.chm,,*.hxs,,*.mshc,,*.mshi::,
+\󰋼 ::*.info,,*.nfo,,*.app,,*.manifest,,*.plist,,*.pri,,*.prf::,
+\ ::*.idl,,*.aidl,,*.winmd::,
+\󰟨 ::*.sock,,*.socket::,
+\󰟥 ::*.fifo::,
+\󰣖 ::*.drv,,*.sys,,*.vxd,,*.dext,,*.kext,,*.efi::,
+\ ::*.url,,*.webloc::,
+\ ::*.lnk,,*.slk::,
+\󰗊 ::*.po,,*.mo,,*.nls,,*.qm,,*.qph::,
+\ ::*.icc,,*.icm::,
+\ ::*.cur,,*.ani::,
+\󰧹 ::*.keylayout,,*.klc,,*.xkb,,*.xkm::,
+\󰖄 ::*.wallet::,
+\󰇮 ::*.email,,*.eml,,*.emlx,,*.msg,,*.p7m,,*.p7s,,*.oft::,
+\󰶍 ::*.mbox,,*.ost,,*.pst::,
+\󰃭 ::*.vcs,,*.ics,,*.ical,,*.icalendar::,
+\ ::*.vcf::,
+\ ::*.mmdb,,*.osm,,*.gdb,,*.gpkg,,*.geojson,,*.gpx::,
+\󰲽 ::*.service,,*.target,,*.rules::,
+\󱤥 ::*.timer::,
+\ ::*.desktop::,
+\󰓓 ::*.vdf::,
+\󰇟 ::*.mmd,,*.mermaid,,*.drawio,,*.gv::,
+\󱦹 ::*.pcx,,*.odg,,*.sketch,,*.kra::,
+\ ::*.fig::,
+\ ::*.blend::,
+\ ::*.ma,,*.mb::,
+\󰻬 ::*.cgm,,*.dwg,,*.dxf,,*.iges,,*.igs,,*.skp,,*.slddrw::,
+\󰮄 ::*.3dm,,*.3ds,,*.3mf,,*.amf,,*.c4d,,*.catpart,,*.cgm,,*.dae,,*.dds,,*.dwf,,*.fbx,,*.gdl,,*.glb,,*.gltf,,*.ipt,,*.jt,,*.m3d,,*.max,,*.mtl,,*.obj,,*.obz,,*.sab,,*.sat,,*.sldprt,,*.step,,*.stp,,*.stl,,*.vrml,,*.x_t,,*.x_b::,
+\ ::*.ai::,
+\ ::*.psb,,*.psd::,
+\ ::*.aep::,
+\ ::*.ino::,
+\ ::*.xcode,,*.xcodeproj,,*.xcworkspace,,*.pbproj,,*.pbxproj::,
+\ ::*.iml::,
+\ ::*.sln,,*.suo,,*.vsix,,*.vsz::,
+\ ::/\.[a-z]*proj$/::,
+\ ::*.net::,
+\ ::*.exe,,*.msi,,*.msix,,*.paf,,*.u3p::,
+\ ::*.dmg,,*.pkg,,*.mpkg,,*.ipa::,
+\󰀲 ::*.apk,,*.aab,,*.aar,,*.apkm,,*.apks,,*.xapk,,*.dex::,
+\󰣨 ::*.ebuild::,
+\ ::*.crx::,
+\󰈹 ::*.xpi::'
+
+set classify+='󰆼 ::*.db,,*.db[0-9],,*.dbf,,*.ldb,,*.pdb,,*.rdb,,*.sdf,,*.sqlite,,*.sqlite3,,*.sqlitedb,,*.realm,,*.odb,,*.mdb,,*.accdb,,*.accde,,*.accdr,,*.accdt::,
+\󰆺 ::*.dat,,*.data,,*.dict,,*.bin,,*.cache::,
+\󱙋 ::*.sql,,*.eql,,*.qry,,*.sqr::,
+\󰱿 ::*.so,,*.so.*,,*.lib,,*.a,,*.o,,*.dll,,*.tlb,,*.cpl,,*.ocx,,*.dylib,,*.elf,,*.obj::,
+\ ::.*.ash,,*.ash,,.*.bash,,*.bash,,.*.csh,,*.csh,,.*.elvish,,*.elvish,,.*.fish,,*.fish,,.*.ksh,,*.ksh,,.*.mksh,,*.mksh,,.*.nu,,*.nu,,.*.pdksh,,*.pdksh,,.*.sh,,*.sh,,.*.tcsh,,*.tcsh,,.*.xsh,,*.xsh,,.*.yash,,*.yash,,.*.zsh,,*.zsh::,
+\󰨊 ::*.ps1,,*.psd1,,*.psm1,,*.bat,,*.cmd,,*.command::,
+\ ::*.dockerfile::,
+\󱃾 ::*.k8s.yml,,*.k8s.yaml::,
+\ ::.*.json,,*.json,,*.jsonl,,*.ndjson,,*.jsonnet,,*.webmanifest,,*.kdl::,
+\ ::.*.yml,,*.yml,,.*.yaml,,*.yaml::,
+\ ::.*.toml,,*.toml::,
+\󱅲 ::*.http,,*.proto,,*.avsc,,*.bond,,*.capnp,,*.fbs,,*.thrift::,
+\󱩅 ::*.parquet,,*.feather,,*.avro,,*.orc::,
+\ ::*.uml,,*.pu,,*.puml,,*.plantuml::,
+\󱌣 ::*.make,,*.makefile,,*.mk,,*.mak,,*.gmk,,*.cmake,,*.nmake,,*.just,,*.justfile,,*.gyp,,*.gypi,,*.spec,,*.nuspec::,
+\󰝴 ::*.ninja::,
+\ ::*.j2,,*.jinja,,*.jinja2::,
+\󰯙 ::*.meson::,
+\ ::*.bzl::,
+\ ::*.gradle,,*.gradle.kts::,
+\󰌠 ::*.py,,*.pyc,,*.pyd,,*.pyi,,*.pyo,,*.pxd,,*.pyw,,*.pym,,*.pyx,,*.pkl,,*.pickle,,*.whl,,*.pyz::,
+\ ::*.ipynb::,
+\ ::*.npy,,*.npz::,
+\󱋶 ::*.recordio,,*.tfrecord::,
+\ ::*.pt,,*.pth::,
+\ ::*.tflite::,
+\ ::*.keras::,
+\󰿋 ::*.ckpt,,*.onnx,,*.h5,,*.hdf5::,
+\ ::*.php::,
+\ ::*.elm::,
+\ ::*.res,,*.resi::,
+\󰌞 ::*.js,,*.cjs,,*.wmls,,*.mjs,,*.jsx,,*.ejs::,
+\󰛦 ::*.ts,,*.tsx::,
+\ ::*.asar::,
+\󰡄 ::*.vue::,
+\ ::*.svelte::,
+\ ::*.astro::,
+\ ::*.prisma::,
+\ ::*.htm,,*.html,,*.xhtml,,*.shtm,,*.shtml,,*.wml::,
+\󰾔 ::*.htmi,,*.mht,,*.mhtml,,*.zim::,
+\󱜧 ::*.haml,,*.cshtml,,*.asp,,*.aspx,,*.phtm,,*.phtml,,*.php[0-9],,*.slim,,*.pug,,*.twig,,*.marko,,*.liquid,,*.njk,,*.cgi::,
+\ ::*.css,,*.less::,
+\ ::*.sass,,*.scss::,
+\ ::*.styl::,
+\󰗀 ::*.xml,,*.xsd,,*.dtd,,*.mxml,,*.xsl,,*.xslt,,*.xbel,,*.xaml,,*.xlf,,*.xliff,,*.rdf,,*.doap::,
+\ ::*.hx,,*.hxml::,
+\󱗞 ::*.mustache,,*.handlebars,,*.hbs::,
+\ ::*.c,,*.h::,
+\ ::*.c++,,*.cp,,*.cpp,,*.cxx,,*.cc,,*.cp,,*.hh,,*.hpp,,*.hxx,,*.inl,,*.cu,,*.cuh::,
+\ ::*.cs,,*.csx::,
+\󰲒 ::*.hs,,*.lhs::,
+\󰢱 ::*.lua,,*.rock,,*.rockspec::,
+\ ::*.jl::,
+\ ::*.go::,
+\ ::*.zig::,
+\ ::*.dart::,
+\󱘗 ::*.rs,,*.rlib::,
+\ ::*.java,,*.jav,,*.jsp,,*.bsh,,*.class,,*.jar,,*.war,,*.ear::,
+\ ::*.scala::,
+\ ::*.groovy,,*.gvy::,
+\󱈙 ::*.kt,,*.kts::,
+\󰴭 ::*.rb,,*.erb,,*.rake,,*.gemspec::,
+\ ::*.ex,,*.exs,,*.eex::,
+\ ::*.pl,,*.pm,,*.t,,*.plx,,*.raku,,*.rakumod::,
+\ ::*.pl,,*.pro::,
+\ ::*.ml,,*.mli,,*.opam::,
+\ ::*.re,,*.rei::,
+\ ::*.f#,,*.fs,,*.fsi,,*.fsscript,,*.fsx::,
+\ ::*.f,,*.for,,*.ftn,,*.f77,,*.f90,,*.f95,,*.f03,,*.f08::,
+\󰟔 ::*.r,,*.rdata,,*.rds,,*.rda::,
+\ ::*.erl,,*.hrl,,*.beam::,
+\ ::*.lisp,,*.lsp::,
+\ ::*.clj,,*.cljs,,*.cljc,,*.cljx,,*.edn::,
+\ ::*.fnl::,
+\ ::*.m,,*.mlx,,*.mat,,*.slx,,*.mdl::,
+\ ::*.swift::,
+\ ::*.vb,,*.vbs::,
+\ ::*.purs::,
+\ ::*.nim,,*.nims::,
+\󰬗 ::*.pas,,*.pp::,
+\ ::*.cr::,
+\ ::*.adb,,*.ads::,
+\ ::*.vala,,*.vapi::,
+\ ::*.sol::,
+\ ::*.vy::,
+\ ::*.ahk::,
+\󰡷 ::*.graphql,,*.gql::,
+\󱄅 ::*.nix::,
+\󱁢 ::*.tf,,*.tfvars,,*.tfstate,,*.tftest.*::,
+\󰈹 ::*.xul::,
+\ ::*.coffee::,
+\ ::*.razor::,
+\ ::*.feature::,
+\ ::*.nupkg,,*.nupack::,
+\󰅴 ::*.in,,*.inc,,*.rc,,*.def,,*.ins,,*.test,,*.usd,,*.usda,,*.usdc,,*.usdz::,
+\󰅴 ::*.src,,*.awk,,*.sed,,*.scm,,*.ss,,*.ac,,*.m4,,*.qml,,*.cl,,*.ada,,*.bas,,*.xq,,*.xql,,*.xqy,,*.typoscript,,*.yang,,*.tact,,*.tcl,,*.rkt,,*.d,,*.y,,*.odin,,*.smali,,*.janet,,*.pony,,*.gleam,,*.ps::,
+\󰘷 ::*.wgsl,,*.hlsl,,*.glsl,,*.agsl,,*.metal,,*.vert,,*.frag::,
+\ ::*.ll::,
+\󱤓 ::*.asm,,*.s,,*.qasm::,
+\ ::*.wasm,,*.wat::,
+\󰚯 ::*.unity,,*.unitypackage::,
+\󰦱 ::*.uasset::,
+\ ::*.gd,,*.godot,,*.tres,,*.tscn::,
+\󰚗 ::*.kicad_pcb,,*.kicad_sch,,*.sch,,*.brd,,*.gbr,,*.ger,,*.gtl,,*.gbl,,*.ucf,,*.xdc::,
+\󰘚 ::*.vhd,,*.vhdl,,*.vho,,*.vlg,,*.verilog,,*.v,,*.sv,,*.sdc,,*.gds,,*.gdsii::'
